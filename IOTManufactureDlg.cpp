@@ -92,7 +92,7 @@ BEGIN_MESSAGE_MAP(CIOTManufactureDlg, CDialogEx)
 	ON_WM_TIMER()
 	ON_WM_CTLCOLOR()
 	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB_MENU, &CIOTManufactureDlg::OnTcnSelchangeTabMenu)
-	ON_MESSAGE(WM_COMM_READ, OnCommunication) //추가
+	ON_MESSAGE(WM_COMM_READ, (LRESULT(AFX_MSG_CALL CWnd::*)(WPARAM, LPARAM))OnCommunication) //추가
 	ON_EN_MAXTEXT(IDC_EDIT_RECEIVE, &CIOTManufactureDlg::OnEnMaxtextEditReceive)
 	ON_BN_CLICKED(IDC_BUTTON_RECEIVE_DATA_CLEAR, &CIOTManufactureDlg::OnBnClickedButtonReceiveDataClear)
 	ON_BN_CLICKED(IDC_BUTTON_VIEW_MAC, &CIOTManufactureDlg::OnBnClickedButtonViewMac)
