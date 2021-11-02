@@ -207,7 +207,7 @@ BOOL CIOTManufactureDlg::OnInitDialog()
 	m_listExcelCtrl.InsertColumn(4, _T("MEMORY"), LVCFMT_CENTER, 70);
 	m_listExcelCtrl.InsertColumn(5, _T("EMMC"), LVCFMT_CENTER, 70);
 	m_listExcelCtrl.InsertColumn(6, _T("FLASH"), LVCFMT_CENTER, 70);
-	m_listExcelCtrl.InsertColumn(7, _T("OLED"), LVCFMT_CENTER, 70);
+	m_listExcelCtrl.InsertColumn(7, _T("LED"), LVCFMT_CENTER, 70);
 	m_listExcelCtrl.InsertColumn(8, _T("ETH0"), LVCFMT_CENTER, 70);
 	m_listExcelCtrl.InsertColumn(9, _T("ETH1"), LVCFMT_CENTER, 70);
 	m_listExcelCtrl.InsertColumn(10, _T("WIFI"), LVCFMT_CENTER, 70);
@@ -382,16 +382,6 @@ void CIOTManufactureDlg::OnBnClickedButtonConnect()
 	}
 	else
 	{
-		CString StrTestCode;
-
-		StrTestCode = "x\n";
-		SendAsciiData(StrTestCode);
-		Wait(200);
-
-		StrTestCode = "exit\n";
-		SendAsciiData(StrTestCode);
-		Wait(200);
-
 		m_Comm.ClosePort();
 
 		//MsgMonitor("컴포트 닫기 성공");
@@ -1131,6 +1121,27 @@ void CIOTManufactureDlg::OnBnClickedButtonSerialNumber()
 		m_listExcelCtrl.SetItemText(0, 10, m_RptTESTWIFI);
 		m_listExcelCtrl.SetItemText(0, 11, m_strDBM);
 		m_listExcelCtrl.SetItemText(0, 12, strTime);
+
+		m_listExcelCtrl.SetItemText(0, 13, _T(""));
+		m_listExcelCtrl.SetItemText(0, 14, _T(""));
+		m_listExcelCtrl.SetItemText(0, 15, _T(""));
+		m_listExcelCtrl.SetItemText(0, 16, _T(""));
+		m_listExcelCtrl.SetItemText(0, 17, _T(""));
+		m_listExcelCtrl.SetItemText(0, 18, _T(""));
+		m_listExcelCtrl.SetItemText(0, 19, _T(""));
+		m_listExcelCtrl.SetItemText(0, 20, _T(""));
+		m_listExcelCtrl.SetItemText(0, 21, _T(""));
+		m_listExcelCtrl.SetItemText(0, 22, _T(""));
+		m_listExcelCtrl.SetItemText(0, 23, _T(""));
+		m_listExcelCtrl.SetItemText(0, 24, _T(""));
+		m_listExcelCtrl.SetItemText(0, 25, _T(""));
+		m_listExcelCtrl.SetItemText(0, 26, _T(""));
+		m_listExcelCtrl.SetItemText(0, 27, _T(""));
+		m_listExcelCtrl.SetItemText(0, 28, _T(""));
+		m_listExcelCtrl.SetItemText(0, 29, _T(""));
+		m_listExcelCtrl.SetItemText(0, 30, _T(""));
+		m_listExcelCtrl.SetItemText(0, 31, _T(""));
+		m_listExcelCtrl.SetItemText(0, 32, _T(""));
 	}
 	m_ResultFlag = 0;
 
@@ -1179,6 +1190,29 @@ void CIOTManufactureDlg::OnBnClickedButtonSerialNumber()
 	xls.SetCellValue(10 + 1, 0 + 1, _T("WIFI TEST"));
 	xls.SetCellValue(11 + 1, 0 + 1, _T("RSSI"));
 	xls.SetCellValue(12 + 1, 0 + 1, _T("TIME"));
+
+	xls.SetCellValue(13 + 1, 0 + 1, _T("CH0"));
+	xls.SetCellValue(14 + 1, 0 + 1, _T("CH1"));
+	xls.SetCellValue(15 + 1, 0 + 1, _T("CH2"));
+	xls.SetCellValue(16 + 1, 0 + 1, _T("CH3"));
+	xls.SetCellValue(17 + 1, 0 + 1, _T("CH4"));
+	xls.SetCellValue(18 + 1, 0 + 1, _T("CH5"));
+	xls.SetCellValue(19 + 1, 0 + 1, _T("CH6"));
+	xls.SetCellValue(20 + 1, 0 + 1, _T("CH7"));
+	xls.SetCellValue(21 + 1, 0 + 1, _T("CH8"));
+	xls.SetCellValue(22 + 1, 0 + 1, _T("CH9"));
+	xls.SetCellValue(23 + 1, 0 + 1, _T("CH10"));
+	xls.SetCellValue(24 + 1, 0 + 1, _T("CH11"));
+	xls.SetCellValue(25 + 1, 0 + 1, _T("CH12"));
+	xls.SetCellValue(26 + 1, 0 + 1, _T("CH13"));
+	xls.SetCellValue(27 + 1, 0 + 1, _T("CH14"));
+	xls.SetCellValue(28 + 1, 0 + 1, _T("CH15"));
+	xls.SetCellValue(29 + 1, 0 + 1, _T("CH16"));
+	xls.SetCellValue(30 + 1, 0 + 1, _T("CH17"));
+	xls.SetCellValue(31 + 1, 0 + 1, _T("CH18"));
+	xls.SetCellValue(31 + 1, 0 + 1, _T("CH19"));
+
+
 	for (int rowIdx = 0; rowIdx < rowCount; rowIdx++)
 	{
 		for (int colIdx = 0; colIdx < colCount; colIdx++)
@@ -1314,6 +1348,27 @@ void CIOTManufactureDlg::OnBnClickedButtonExcelSave()
 	xls.SetCellValue(10 + 1, 0 + 1, _T("WLAN0 TEST"));
 	xls.SetCellValue(11 + 1, 0 + 1, _T("RSSI"));
 	xls.SetCellValue(12 + 1, 0 + 1, _T("TIME"));
+
+	xls.SetCellValue(13 + 1, 0 + 1, _T("CH0"));
+	xls.SetCellValue(14 + 1, 0 + 1, _T("CH1"));
+	xls.SetCellValue(15 + 1, 0 + 1, _T("CH2"));
+	xls.SetCellValue(16 + 1, 0 + 1, _T("CH3"));
+	xls.SetCellValue(17 + 1, 0 + 1, _T("CH4"));
+	xls.SetCellValue(18 + 1, 0 + 1, _T("CH5"));
+	xls.SetCellValue(19 + 1, 0 + 1, _T("CH6"));
+	xls.SetCellValue(20 + 1, 0 + 1, _T("CH7"));
+	xls.SetCellValue(21 + 1, 0 + 1, _T("CH8"));
+	xls.SetCellValue(22 + 1, 0 + 1, _T("CH9"));
+	xls.SetCellValue(23 + 1, 0 + 1, _T("CH10"));
+	xls.SetCellValue(24 + 1, 0 + 1, _T("CH11"));
+	xls.SetCellValue(25 + 1, 0 + 1, _T("CH12"));
+	xls.SetCellValue(26 + 1, 0 + 1, _T("CH13"));
+	xls.SetCellValue(27 + 1, 0 + 1, _T("CH14"));
+	xls.SetCellValue(28 + 1, 0 + 1, _T("CH15"));
+	xls.SetCellValue(29 + 1, 0 + 1, _T("CH16"));
+	xls.SetCellValue(30 + 1, 0 + 1, _T("CH17"));
+	xls.SetCellValue(31 + 1, 0 + 1, _T("CH18"));
+	xls.SetCellValue(31 + 1, 0 + 1, _T("CH19"));
 
 	for (int rowIdx = 0; rowIdx < rowCount; rowIdx++)
 	{

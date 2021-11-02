@@ -158,7 +158,7 @@ void CCommon::OnBnClickedButtonEmmcTest()
 		cntTime++;
 		if (pDlg->GetterResult.GetLength() == 0 || cntTime >= 100) {
 			cntNULL++;
-			if (cntNULL >= 5) {
+			if (cntNULL >= 50) {
 				pDlg->m_ResultFlag = 0;
 				pDlg->AllButtonEnable();
 				pDlg->m_RptEMMCTEST = "NG";
@@ -735,7 +735,7 @@ void CCommon::OnBnClickedButtonFlashTest()
 		cntTime++;
 		if (pDlg->GetterResult.GetLength() == 0 || cntTime >= 100) {
 			cntNULL++;
-			if (cntNULL >= 15) {
+			if (cntNULL >= 50) {
 				pDlg->m_ResultFlag = 0;
 				pDlg->AllButtonEnable();
 				pDlg->m_RptFLASHTEST = "NG";
