@@ -22,8 +22,9 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{137A8379-7EB5-4087-B97C-700BB28588D5}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
-    <RootNamespace>IOTManufacture</RootNamespace>
+    <RootNamespace>CimManufacture</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CimManufacture</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
